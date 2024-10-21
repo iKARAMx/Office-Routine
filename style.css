@@ -1,0 +1,512 @@
+/**
+ * RESET
+ */
+
+* {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+:root {
+
+    /**
+     * COLORS
+     */
+
+    --clr-light-background: #f9f9f9;
+    --clr-accent-green: #29a744;
+    --clr-accent-blue: #007bff;
+    --clr-primary-dark: #292929;
+    --clr-primary-light: #2b2f62;
+
+    /* 
+     * Fonts
+    */
+
+    --fs-1: .5rem;
+    --fs-2: .875rem;
+    --fs-3: 1rem;
+    --fs-4: 1.75rem;
+    --fs-5: 2rem;
+    --fs-6: 4rem;
+
+}
+
+
+body {
+    font-family: 'Jost', 'sans-serif';
+    color: var(--clr-primary-dark);
+    background-color: var(--clr-light-background);
+}
+
+.container {
+    padding-inline: 3rem;
+}
+
+.btn {
+    padding: .5rem 2rem;
+    color: white;
+    border-radius: 999999rem;
+    border: none;
+    outline: none;
+    appearance: unset;
+}
+
+
+/**
+ * header
+ */
+
+
+.nav .container {
+    background-color: white;
+    padding-block: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: var(--fs-4);
+    font-weight: 600;
+}
+
+
+.nav-ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+@keyframes transperancy {
+    100%{
+color:rgba(0, 0, 0, 0.671)
+    }
+
+}
+.nav-link{
+    font-weight: 500;
+    position: relative;
+    transition-duration: 0.5s;
+}
+
+.nav-link:hover{
+    animation-name: transperancy;
+    animation-duration: 0.6s;
+    /* animation-fill-mode:forwards; */
+    animation-direction: alternate;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.nav-link::before{
+    content: '';
+    position: absolute;
+    bottom:-20px;
+    left:0;
+    width: 0%;
+    height: 3px;
+    background-color: black;
+    transition: all 0.5s;
+}
+.nav-link:hover::before{
+    width: 105%;
+}
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-button {
+    background-color: var(--clr-accent-green);
+}
+
+/**
+ * HERO
+ */
+
+.hero .container {
+    --children-width: 540px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 5rem;
+}
+
+.video-wrapper {
+    margin-inline: auto;
+    padding-inline: 5rem;
+    display: grid;
+    place-content: center;
+}
+
+.video-wrapper video {
+    width: 100%;
+}
+
+
+.hero-h1 {
+    color: var(--clr-primary-light);
+    font-size: var(--fs-6);
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-content {
+    width: var(--children-width);
+}
+
+.hero-content p {
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    font-size: 1.25rem;
+    background-color: var(--clr-accent-green);
+    padding: 1.25rem 2.5rem;
+    margin: auto;
+}
+/* 
+    Features
+*/
+.sectionFeatures{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top:6rem;
+    margin-bottom:6rem;
+}
+.sectionFeatures .container{
+display: grid;
+grid-template-columns:repeat(4,1fr) ;
+gap:1rem;
+width: auto;
+padding: 1.5rem 1.5rem;
+}
+.sectionFeatures .Card{
+    display: flex;
+    flex-direction: column;
+    width: 21rem;
+    align-items: center;
+}
+.sectionFeatures i{
+    font-size: 5rem;
+    margin-bottom: 1.25rem;
+    color:rgb(0, 123, 255)
+}
+.sectionFeatures h5{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+}
+.sectionFeatures p{
+    font-size: 1rem;
+    text-align: center;
+    width: 300px;
+    line-height: 1.5;
+}
+.Dashboard{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 4rem;
+}
+.DashboardContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 90%;
+    padding: 1.5rem 1.5rem;
+}
+.DashboardH1{
+    font-size: 3.4rem;
+    color: var(--clr-primary-light);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.DashboardContent{
+    color: var(--clr-primary-dark);
+    font-size: 1.2rem;
+    padding: 0px 3rem 3rem 1rem;
+    font-weight: 400;
+}
+.DashboardBttns{
+    display: flex;
+    align-items: self-start;
+    flex-direction: column;
+    color: white;
+    margin-top: 2rem;
+}
+.DashboardBttn-YourTasksMangment{
+    background-color: var(--clr-accent-blue);
+    padding: .7rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+}
+.DashboardBttn-CalendarsManagement{
+    background-color: var(--clr-accent-blue);
+    padding: .7rem 2rem;
+    border-radius: 50px;
+}
+.DashboardImgWapper{
+    padding: 0px 48px 48px 12px;
+}
+.DashboardIMG{
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+.AdviceLooking{
+    margin-bottom: 2rem;
+}
+.AdviceLookingContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1.5rem 1.5rem;
+}
+.AdviceLookingContent{
+    padding-top: 2rem;
+}
+.AdviceLookingH5{
+    color: var(--clr-accent-blue);
+    font-weight:700;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+.AdviceLookingH1{
+    color:var(--clr-primary-light);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.AdviceLookingP{
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+.AdviceLookingBtn{
+    background-color: var(--clr-accent-blue);
+    border-radius: 50px;
+    color: white;
+    padding: 0.5rem 2rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.AdviceLookingImgWapper{
+    padding: 0 0 3rem 0;
+    display: flex;
+    align-items: end ;
+    justify-content: end;
+}
+.SubscribePlansContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.SubscribePlansTitle{
+    font-size: 3.4rem;
+    color:var(--clr-primary-light);
+    font-weight:700;
+    margin-bottom: 1rem;
+}
+.SubscribePlansDescription{
+    margin-bottom: 0.8rem;
+}
+/*
+Plans Cards 
+*/
+
+.PlansCardCotainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 4rem 5rem; 
+}
+.CardTitle{
+    font-size: 2.5rem;
+    color: var(--clr-accent-blue);
+    font-weight: 600;
+}
+.CardsBill{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.PlanCard{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 400px;
+    padding: 3.5rem 2rem 2rem;
+}
+.PrimaryPlanCard{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 400px;
+    padding: 3.5rem 2rem 2rem;
+    border: #007bff 0.3rem dashed;
+    border-left: none;
+    border-right: none;
+    border-radius: 2rem;
+}
+.PlanFeatures{
+    list-style-type:none;
+}
+.PlanFeatures li{
+    margin-block: 1.5rem;
+}
+.PlanBtn{
+    background-color: var(--clr-accent-blue);
+    border-radius: 50px;
+    color: white;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+}
+.PlanCard:hover{
+    box-shadow: 0 0 10px 0px #7a7070;
+}
+.PrimaryPlanCard:hover{
+    box-shadow: 0 0 6px 0px #7a7070;
+}
+.NoteContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap:0.5rem;
+    margin-bottom: 6rem;
+}
+.NoteContainer h5{
+    font-weight: bold;
+}
+.ContactContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0.5rem 1rem;
+}
+.ContactContent{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    padding: 8rem 0 0 5.5rem;
+}
+.ContactContent h5{
+    color:var(--clr-accent-blue);
+    font-size: 1.25rem;
+    font-weight:700;
+    margin-bottom: .7rem;
+}
+.ContactContent h1{
+    color:var(--clr-primary-light);
+    font-size: 2.8rem;
+    font-weight:700;
+    margin-bottom: 1.5rem;
+}
+.ContactContent p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.ContactImgWapper{
+    padding: 0 0rem 5rem 2rem;
+}
+.ContactInputContainer{
+    padding: 1rem 5rem;
+    margin-bottom: 5rem;
+}
+.InputPlaces
+{
+    margin-inline: 2rem;
+    padding: 0.7rem 15rem 0.7rem 2rem;
+    border-radius: 50px;
+    border: 1px solid rgb(80, 80, 80);
+}
+.InputPlaces:focus{
+    outline: none;
+    border: 1px solid rgb(80 80 80 / 50%);}
+
+.ContactJoinBtn{
+    border-radius: 50px;
+    padding: 0.8rem 8rem 0.8rem 8rem;
+    background-color: var(--clr-accent-blue);
+    color: white;
+    margin: auto;
+    font-size: 1.2rem;
+}
+.FooterContainer{
+background-color: var(--clr-primary-light);
+padding: 3rem 8rem 0;
+display: grid;
+grid-template-rows: repeat(2,1fr);
+height: 25rem;
+}
+.InfoSection{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.FirstColumn h1{
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+.SecondColumn{
+padding: 0 7rem;
+}
+.SecondColumn .title{
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+.SecondColumn .ContactInfo{
+    font-size: 1.1rem;
+    margin-bottom: 1.3rem;
+}
+.ContactInfo i{
+    font-size: 1.4rem;
+    color:var(--clr-accent-green)
+}
+.ThirdColumn{
+    padding: 0 1rem 0 7rem;
+    }
+.ThirdColumn .title{
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+.ThirdColumn .AddressInfo{
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+}
+.CopyRight{
+    color: white;
+    font-size: 1rem;
+    height: fit-content;
+    margin-left: -2rem;
+}
